@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--DOCTYPE hibernate-configuration PUBLIC 
+    "classpath://org/hibernate/hibernate-configuration-3.0.dtd"-->
+    
+<!DOCTYPE hibernate-configuration PUBLIC
+        "-//Hibernate/Hibernate Configuration DTD//EN"
+        "http://hibernate.sourceforge.net/hibernate-configuration-3.0.dtd">
+    
+<hibernate-configuration>
+
+	<session-factory>
+	
+		<property name = "hibernnate.connection.driver_class">come.mysql.jdbc.Driver</property>
+		<property name = "hibernate.connection.url">jdbc:mysql://localhost:3306/myHibernate</property>
+		<property name = "hibernate.connection.username">root</property>
+		<property name = "hibernate.connection.password">4535</property>
+		
+		<property name="hibernate.dialect">org.hibernate.dialect.MySQLDialect</property>
+		
+		<!-- CRUD Operations -->
+		
+		<!-- Create Operation.
+		Following statement will check if the table exists.
+		If the table exists, then it will first drop te table and insert anew. 
+		If it doesnt exists then it will only ceate the table and insert the value.
+		-->
+		
+		<property name="hbm2ddl.auto">create</property>
+		 
+		<!-- Update Operation.
+		
+		<property name="hbm2ddl.auto">update</property>-->
+		
+		<property name="show_sql">true</property>
+		
+		<mapping class ="com.packageName.MyPOJO"></mapping>
+	
+	</session-factory>
+
+</hibernate-configuration>
